@@ -1,0 +1,13 @@
+<apex:page standardController="Vaccination_History__c" extensions="vaccineHistoryserviceHealthPass_IDHP" >
+    <script>
+    window.onload=function()
+    {
+        doInit();
+    };
+    </script> 
+    
+    <apex:form >
+        <apex:outputText >Collecting and processing the information, you will be redirected upon completion. If QRCode isnt generated please come back after sometime.</apex:outputText>
+        <apex:actionFunction name="doInit" action="{!getDHPProof}"/> 
+    </apex:form>
+</apex:page>

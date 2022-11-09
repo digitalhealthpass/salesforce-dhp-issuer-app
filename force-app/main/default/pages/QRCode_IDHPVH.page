@@ -1,0 +1,14 @@
+<apex:page standardController="Vaccination_History__c" extensions="showQRCodeVH" renderAs="PDF" showHeader="false" sidebar="false">
+     <input type="hidden" name="currentvfpage" value="{!$CurrentPage.Name}"/>
+     <apex:outputPanel rendered="{!IF(contentVersion != null,true,false)}">
+     <apex:outputText >The QR Code for <b>{!Vaccination_History__c.Vaccine_Administered_IDHP__r.Person_Vaccinated_IDHP__r.name}</b> is :</apex:outputText>
+     <div style="text-align:center;">
+          
+
+     <apex:image url="/sfc/servlet.shepherd/version/download/{!contentVersion.Id}" width="400" height="400"/> 
+     </div>
+     </apex:outputPanel>
+     <apex:outputPanel rendered="{!IF(contentVersion == null,true,false)}">
+     <apex:outputText >No QR proof exists because no Digital Proof has ben initiated</apex:outputText>
+     </apex:outputPanel>
+</apex:page>

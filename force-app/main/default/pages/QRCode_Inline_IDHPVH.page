@@ -1,0 +1,10 @@
+<apex:page standardController="Vaccination_History__c" extensions="showQRCodeVH">
+     <apex:outputPanel rendered="{!IF(contentVersion != null,true,false)}">
+     <div style="text-align:center;">
+     <apex:image url="/sfc/servlet.shepherd/version/download/{!contentVersion.Id}" width="350" height="350"/> 
+     </div>
+     </apex:outputPanel>
+     <apex:outputPanel rendered="{!IF(contentVersion == null,true,false)}">
+     <apex:outputText >No QR proof exists because no Digital Proof has ben initiated</apex:outputText>
+     </apex:outputPanel>
+</apex:page>
